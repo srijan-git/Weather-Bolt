@@ -1,0 +1,597 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap');
+
+
+
+
+:root{
+    --highlight-section-color: #eeedf3
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+body{
+    background-color: #121212;
+}
+.main-div{
+    display: flex;
+    flex-direction: row;
+}
+/* sidebar design */
+.sidebar{
+    width: 30%;
+    height: 100vh;
+    /* border: 2px solid black; */
+    padding: 30px 15px 30px 30px;
+    /* background-color: #423c54; */
+    background-color: rgb(253, 253, 253);
+    border-radius: 0 25px 25px 0;
+    background-color: #121212;
+    color: white;
+
+}
+.searchbox{
+    display: flex;
+    justify-content: center;
+    /* border: 2px solid black; */
+    height: 10vh;
+    position: relative;
+}
+.btn-dark{
+    position: absolute;
+    right: 3%;
+    top: 31%;
+    border: none;
+    /* display: none; */
+
+}
+#search-places{
+    position: relative;
+    width: 100%;
+    height: 45px;
+    margin: auto;
+    font-size: 20px;
+    outline: none;
+    border: none;
+    background-color: #eeedf3;
+    padding: 10px 45px 10px 25px;
+    border-radius: 25px; 
+    font-family: 'Lexend Deca', sans-serif;
+}
+/* .bi-search{
+    height: 24px;
+    width: 24px;
+    position: absolute;
+    top: 31%;
+    left: 12px;
+}
+.bi-x-circle{
+    height: 24px;
+    width: 24px;
+    position: absolute;
+    top: 31%;
+    right: 12px;
+} */
+/* .btn-dark{
+    height: 24px;
+    width: 50px;
+    position: absolute;
+    top: 31%;
+    left: 12px;
+} */
+.current-weather-image{
+    /* width: 100%;*/
+    /* height: 200px;  */
+    height: 30vh;
+    /* border: 2px solid black; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.current-weather-image .bi-cloud-sun{
+    height: 180px;
+    width: 180px;
+    color: rgb(119, 116, 111);
+}
+.temperature{
+    width: 100%;
+    height: 17vh;
+    /* border: 2px solid black; */
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    background-color: #1e1e1e;
+    border-radius: 15px;
+   
+}
+.temperature h1{
+    font-size: 80px;
+    padding: 0 15px;
+    font-family: 'Lexend Deca', sans-serif;
+}
+.current-date{
+    height: 5vh;
+    /* border: 2px solid black; */
+    display: flex;
+    align-items: center;
+}
+.current-date p{
+    font-size: 18px;
+    padding: 0 5px;
+    font-family: 'Lexend Deca', sans-serif;
+}
+
+.weather-condition{
+    display: flex;
+    /* border: 2px solid black; */
+    height: 7vh;
+}
+/* .weather-condition  div{
+    border: 2px solid black;
+} */
+.weather-condition-icon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 15%;
+}
+.weather-condition-text{
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    width: 85%;
+}
+.weather-condition-text p{
+    font-size: 18px;
+    font-family: 'Lexend Deca', sans-serif;
+}
+.bi-cloudy{
+   width: 40px;
+   height: 40px;
+   margin-top: -10px;
+}
+
+
+.rain-prediction{
+    display: flex;
+    /* border: 2px solid black; */
+    /* height: 50px; */
+    height: 7vh;
+}
+/* .rain-prediction  div{
+    border: 2px solid black;
+} */
+.rain-prediction-icon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 15%;
+}
+.rain-prediction-text{
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    width: 85%;
+}
+.rain-prediction-text p{
+    font-size: 18px;
+    font-family: 'Lexend Deca', sans-serif;
+}
+.bi-cloud-rain{
+   width: 35px;
+   height: 35px;
+   /* margin-top: -5px; */
+}
+
+.location-image{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 12vh;
+    width: 100%;
+    /* border: 2px solid black; */
+    border-radius: 15px;
+    margin-top: 10px;
+    background-color: #5773ff;
+    margin-left: auto;
+    margin-right: auto;
+}
+.location-image p{
+    position: absolute;
+    font-family: 'Lexend Deca', sans-serif;
+}
+
+
+/* highlight section */
+
+
+
+.highlight-section{
+    background-color: var(--highlight-section-color);
+    width: 70%;
+    height: 100vh;
+    /* border: 2px solid black; */
+    padding: 30px 15px 30px 15px;
+    /* background-color: #252433; */
+    border-radius: 15px 0 0 15px;
+}
+.highlight-section-header{
+    /* border: 2px solid black; */
+    height: 5vh;
+}
+.highlight-section-header p{
+    display: inline;
+    font-size: 22px;
+    /* padding: 5px; */
+    border-bottom: 3px solid black;
+    border-radius: 2px;
+    font-family: 'Lexend Deca', sans-serif;
+    font-weight: bolder;
+}
+.weekly-forecast{
+    height: 25vh;
+    margin-top: 15px;
+    /* border: 2px solid black; */
+    display: flex;
+}
+.weekcard{
+    width: 14%;
+    /* border: 2px solid black; */
+    border-radius: 15px;
+    margin: 4px;
+    /* height: 158px; */
+    /* background-color: white; */
+    padding-right: 5px;
+    padding-left: 5px;
+    /* background-color: #a29ce5; */
+    background-color: #121212;
+    color: white;
+    
+}
+.weekcard .day{
+    height: 20%;
+    /* border: 2px solid red; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.weekcard .day p{
+    font-size: 18px;
+    font-family: 'Lexend Deca', sans-serif;
+}
+.weekcard .day-weather-icon1 .day-weather-icon2 .day-weather-icon3 .day-weather-icon4 
+.day-weather-icon5 .day-weather-icon6 .day-weather-icon7{
+    height: 65%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border: 2px solid black; */
+}
+
+.day-temp .max{
+    font-size: 20px;
+    font-family: 'Lexend Deca', sans-serif;
+}
+.day-temp .min{
+    font-size: 16px;
+    font-family: 'Lexend Deca', sans-serif;
+    color: gray;
+}
+.weekcard .day-temp{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 15%;
+}
+.weekcard .day-temp > div{
+    /* border: 2px solid black; */
+    margin: 0 5px;
+}
+
+/* highlight header section */
+.todays-highlight-header{
+    height: 10vh;
+    /* border: 2px solid blue; */
+    display: flex;
+    align-items: center;
+}
+.todays-highlight-header p{
+    font-size: 22px;
+    font-family: 'Lexend Deca', sans-serif;
+    font-weight: bolder;
+}
+.highlight-container{
+    height: 50vh;
+    display: flex;
+    flex-wrap: wrap;
+    /* border: 2px solid black; */
+}
+.highlight-cards{
+    width: 32%;
+    margin: 5px;
+    height: 48%;
+    /* border: 2px solid black; */
+    border-radius: 15px;
+    background-color: white;
+    background-color: #f10b03;
+    /* background-color: paleturquoise; */
+    background-color: #5773ff;
+}
+/* .highlight-cards > div{
+    border: 2px solid green;
+} */
+.highlight-card-heading{
+    height: 25%;
+    /* border: 2px solid grey; */
+}
+.highlight-card-heading  p{
+    font-size: 20px;
+    padding: 5px 20px;
+    font-family: 'Lexend Deca', sans-serif;
+    /* border: 2px solid black; */
+}
+.uv-index-value{
+    height: 75%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.uv-index-value p{
+    font-size: 35px;
+    font-family: 'Lexend Deca', sans-serif;
+}
+
+/* wind status */
+.wind-value{
+    height: 75%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.wind-value p{
+    font-size: 35px;
+    font-family: 'Lexend Deca', sans-serif;
+}
+
+/* sunrise and sunset */
+.sun-section{
+    height: 75%;
+    /* border: 2px solid grey; */
+}
+.sunrise{
+    display: flex;
+    height: 50%;
+}
+/* .sunrise > div{
+    border: 2px solid black;
+} */
+.sunrise .sunrise-image{
+    width: 15%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.sunrise .sunrise-image .bi-sunrise{
+    width: 24px;
+    height: 24px;
+}
+.sunrise .sunrise-time{
+    width: 85%;
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+}
+.sunset{
+    display: flex;
+    height: 50%;
+}
+/* .sunset > div{
+    border: 2px solid black;
+} */
+.sunrise .sunrise-time{
+    width: 85%;
+}
+.sunrise .sunrise-time p{
+    font-size: 18px;
+    font-family: 'Lexend Deca', sans-serif;
+}
+.sunset .sunset-image{
+    width: 15%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.sunset .sunset-image .bi-sunset{
+    width: 24px;
+    height: 24px;
+}
+.sunset .sunset-time{
+    width: 85%;
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+}
+.sunset .sunset-time p{
+    font-size: 18px;
+    font-family: 'Lexend Deca', sans-serif;
+}
+
+/* humidity status */
+.humidity-value{
+    height: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.humidity-value p{
+    font-size: 35px;
+    font-family: 'Lexend Deca', sans-serif;
+}
+.humidity-status{
+    height: 25%;
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+}
+.humidity-status p{
+    font-size: 14px;
+    padding: 0 20px;
+    font-family: 'Lexend Deca', sans-serif;
+}
+
+/* visibility status */
+.visibility-value{
+    height: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.visibility-value p{
+    font-size: 35px;
+    font-family: 'Lexend Deca', sans-serif;
+}
+.visibility-status{
+    height: 25%;
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+}
+.visibility-status p{
+    font-size: 14px;
+    padding: 0 20px;
+    font-family: 'Lexend Deca', sans-serif;
+}
+
+/* air quality */
+/* .air-quality-value{
+    height: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.air-quality-value p{
+    font-size: 25px;
+    font-family: 'Lexend Deca', sans-serif;
+}
+.air-quality-status{
+    height: 25%;
+    display: flex;
+    align-items: center;
+
+}
+.air-quality-status p{
+    font-size: 14px;
+    padding: 0 20px;
+    font-family: 'Lexend Deca', sans-serif;
+} */
+#temperature{
+    /* border: 2px solid black; */
+    font-family:'Lexend Deca', sans-serif;
+}
+.temp-wrapper{
+    /* border: 2px solid red; */
+    height: 75%;
+}
+.max-temp-section{
+    /* border: 2px solid black; */
+    display: flex;
+    height: 50%;
+    justify-content: center;
+    align-items: center;
+}
+.max-temp-icon{
+    width: 15%;
+    /* border: 2px solid green; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.max-temp-value{
+    width: 85%;
+    font-size: 18px;
+}
+.max-temp-value p{
+    font-family: 'Lexend Deca', sans-serif;
+}
+.min-temp-section{
+    /* border: 2px solid black; */
+    display: flex;
+    height: 50%;
+    justify-content: center;
+    align-items: center;
+}
+.min-temp-icon{
+    width: 15%;
+    /* border: 2px solid green; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.min-temp-value{
+    width: 85%;
+    font-size: 18px;
+}
+.min-temp-value p{
+    font-family: 'Lexend Deca', sans-serif;
+}
+
+.bi-thermometer-high{
+    width: 24px;
+    height: 24px;
+}
+.bi-thermometer{
+    width: 24px;
+    height: 24px;
+}
+.small-width-notification{
+    display: none;
+}
+
+/* It's time for some media queries */
+@media screen and (max-width:800px){
+    body{
+        background-color: white;
+    }
+    .main-div{
+        display: none;
+    }
+    .small-width-notification{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: 2px solid black;
+      position: absolute;
+      top: 40%;
+      width: 100%;
+    }
+    .notification-icon{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .bi-exclamation-triangle{
+        color: rgb(158, 198, 211);
+    }
+    .small-width-notification{
+        display: block;
+    }
+    .notification-text{
+        padding-top: 20px;
+        padding-right: 10px;
+        padding-left: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+       
+    }
+    .notification-text p{
+        font-size: 18px;
+        font-family: 'Lexend Deca', sans-serif; 
+        text-align: justify;
+    }
+
+}

@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="weatherbit.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+        integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./css/style.css">
+    <title>{{title}}</title>
+</head>
+
+<body>
+    <div class="small-width-notification">
+        <div class="notification-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" fill="currentColor"
+                class="bi bi-exclamation-triangle" viewBox="0 0 16 16">
+                <path
+                    d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z" />
+                <path
+                    d="M7.002 12a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM7.1 5.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995z" />
+            </svg>
+        </div>
+        <div class="notification-text">
+            <p>This webpage is not optimized for mobile devices yet</p>
+        </div>
+    </div>
+    <div class="main-div">
+        <div class="sidebar">
+            <!-- {{>header}} -->
+            <form class="searchbox">
+                <input type="text" id="search-places" placeholder="Search by city name">
+                <button class="btn btn-dark"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26"
+                        fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                        <path
+                            d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+                    </svg>
+                </button>
+            </form>
+            <div class="current-weather-image">
+                <div class="weather-icon">
+                    {{!-- Icon will be added Dynamically --}}
+                </div>
+            </div>
+            <div class="temperature">
+                <h1 id="temp-condition">0°C</h1>
+            </div>
+            <div class="current-date">
+                <p id="current-date-details"></p>
+                <p id="timeElement">00:00</p>
+            </div>
+            <div class="weather-condition">
+                <div class="weather-condition-text">
+                    <p>pending...</p>
+                </div>
+            </div>
+            <div class="rain-prediction">
+                <div class="rain-prediction-text">
+                    <p>Status Pending - 0%</p>
+                </div>
+            </div>
+            <div class="location-image">
+                <p>Please enter a city name first...</p>
+            </div>
+        </div>
+        <div class="highlight-section">
+            <div class="highlight-section-header">
+                <p>Week</p>
+            </div>
+            <div class="weekly-forecast">
+
+                <div class="weekcard">
+                    <div class="day">
+                        <p id="day1">Day 1</p>
+                    </div>
+                    <div class="day-weather-icon1">
+                        {{!-- Icon will be added Dynamically --}}
+                    </div>
+                    <div class="day-temp">
+                        <div class="max">
+                            <p id="max1">0°</p>
+                        </div>
+                        <div class="min">
+                            <p id="min1">0°</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="weekcard">
+                    <div class="day">
+                        <p id="day2">Day 2</p>
+                    </div>
+                    <div class="day-weather-icon2">
+                        {{!-- Icon will be added Dynamically --}}
+                    </div>
+                    <div class="day-temp">
+                        <div class="max">
+                            <p id="max2">0°</p>
+                        </div>
+                        <div class="min">
+                            <p id="min2">0°</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="weekcard">
+                    <div class="day">
+                        <p id="day3">Day 3</p>
+                    </div>
+                    <div class="day-weather-icon3">
+                        {{!-- Icon will be added Dynamically --}}
+                    </div>
+                    <div class="day-temp">
+                        <div class="max">
+                            <p id="max3">0°</p>
+                        </div>
+                        <div class="min">
+                            <p id="min3">0°</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="weekcard">
+                    <div class="day">
+                        <p id="day4">Day 4</p>
+                    </div>
+                    <div class="day-weather-icon4">
+                        {{!-- Icon will be added Dynamically --}}
+                    </div>
+                    <div class="day-temp">
+                        <div class="max">
+                            <p id="max4">0°</p>
+                        </div>
+                        <div class="min">
+                            <p id="min4">0°</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="weekcard">
+                    <div class="day">
+                        <p id="day5">Day 5</p>
+                    </div>
+                    <div class="day-weather-icon5">
+                        {{!-- Icon will be added Dynamically --}}
+                    </div>
+                    <div class="day-temp">
+                        <div class="max">
+                            <p id="max5">0°</p>
+                        </div>
+                        <div class="min">
+                            <p id="min5">0°</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="weekcard">
+                    <div class="day">
+                        <p id="day6">Day 6</p>
+                    </div>
+                    <div class="day-weather-icon6">
+                        {{!-- Icon will be added Dynamically --}}
+                    </div>
+                    <div class="day-temp">
+                        <div class="max">
+                            <p id="max6">0°</p>
+                        </div>
+                        <div class="min">
+                            <p id="min6">0°</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="weekcard">
+                    <div class="day">
+                        <p id="day7">Day 7</p>
+                    </div>
+                    <div class="day-weather-icon7">
+                        {{!-- Icon will be added Dynamically --}}
+                    </div>
+                    <div class="day-temp">
+                        <div class="max">
+                            <p id="max7">0°</p>
+                        </div>
+                        <div class="min">
+                            <p id="min7">0°</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="todays-highlight-header">
+                <p>Today's Highlights</p>
+            </div>
+
+            <div class="highlight-container">
+                <div class="highlight-cards">
+                    <div class="highlight-card-heading">
+                        <p>UV-Index</p>
+                    </div>
+                    <div class="uv-index-value">
+                        <p>0</p>
+                    </div>
+                </div>
+                <div class="highlight-cards">
+                    <div class="highlight-card-heading">
+                        <p>Wind status</p>
+                    </div>
+                    <div class="wind-value">
+                        <p>0 km/h</p>
+                    </div>
+                </div>
+                <div class="highlight-cards">
+                    <div class="highlight-card-heading">
+                        <p>Sunrise & Sunset</p>
+                    </div>
+                    <div class="sun-section">
+                        <div class="sunrise">
+                            <div class="sunrise-image">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-sunrise" viewBox="0 0 16 16">
+                                    <path
+                                        d="M7.646 1.146a.5.5 0 0 1 .708 0l1.5 1.5a.5.5 0 0 1-.708.708L8.5 2.707V4.5a.5.5 0 0 1-1 0V2.707l-.646.647a.5.5 0 1 1-.708-.708l1.5-1.5zM2.343 4.343a.5.5 0 0 1 .707 0l1.414 1.414a.5.5 0 0 1-.707.707L2.343 5.05a.5.5 0 0 1 0-.707zm11.314 0a.5.5 0 0 1 0 .707l-1.414 1.414a.5.5 0 1 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zM8 7a3 3 0 0 1 2.599 4.5H5.4A3 3 0 0 1 8 7zm3.71 4.5a4 4 0 1 0-7.418 0H.499a.5.5 0 0 0 0 1h15a.5.5 0 0 0 0-1h-3.79zM0 10a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2A.5.5 0 0 1 0 10zm13 0a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5z" />
+                                </svg>
+                            </div>
+                            <div class="sunrise-time">
+                                <p>00:00 AM/PM</p>
+                            </div>
+                        </div>
+                        <div class="sunset">
+                            <div class="sunset-image">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-sunset" viewBox="0 0 16 16">
+                                    <path
+                                        d="M7.646 4.854a.5.5 0 0 0 .708 0l1.5-1.5a.5.5 0 0 0-.708-.708l-.646.647V1.5a.5.5 0 0 0-1 0v1.793l-.646-.647a.5.5 0 1 0-.708.708l1.5 1.5zm-5.303-.51a.5.5 0 0 1 .707 0l1.414 1.413a.5.5 0 0 1-.707.707L2.343 5.05a.5.5 0 0 1 0-.707zm11.314 0a.5.5 0 0 1 0 .706l-1.414 1.414a.5.5 0 1 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zM8 7a3 3 0 0 1 2.599 4.5H5.4A3 3 0 0 1 8 7zm3.71 4.5a4 4 0 1 0-7.418 0H.499a.5.5 0 0 0 0 1h15a.5.5 0 0 0 0-1h-3.79zM0 10a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2A.5.5 0 0 1 0 10zm13 0a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5z" />
+                                </svg>
+                            </div>
+                            <div class="sunset-time">
+                                <p>00:00 AM/PM</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="highlight-cards" id="uv-index">
+                    <div class="highlight-card-heading">
+                        <p>Humidity</p>
+                    </div>
+                    <div class="humidity-value">
+                        <p>0%</p>
+                    </div>
+                    <div class="humidity-status">
+                        <p>Status pending...</p>
+                    </div>
+                </div>
+                <div class="highlight-cards" id="uv-index">
+                    <div class="highlight-card-heading">
+                        <p>Visibility</p>
+                    </div>
+                    <div class="visibility-value">
+                        <p>0 KM</p>
+                    </div>
+                    <div class="visibility-status">
+                        <p>Status pending...</p>
+                    </div>
+                </div>
+                <div class="highlight-cards" id="temperature">
+                    <div class="highlight-card-heading">
+                        <p>Temperature</p>
+                    </div>
+                    <div class="temp-wrapper">
+                        <div class="max-temp-section">
+                            <div class="max-temp-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-thermometer-high" viewBox="0 0 16 16">
+                                    <path
+                                        d="M9.5 12.5a1.5 1.5 0 1 1-2-1.415V2.5a.5.5 0 0 1 1 0v8.585a1.5 1.5 0 0 1 1 1.415z" />
+                                    <path
+                                        d="M5.5 2.5a2.5 2.5 0 0 1 5 0v7.55a3.5 3.5 0 1 1-5 0V2.5zM8 1a1.5 1.5 0 0 0-1.5 1.5v7.987l-.167.15a2.5 2.5 0 1 0 3.333 0l-.166-.15V2.5A1.5 1.5 0 0 0 8 1z" />
+                                </svg>
+                            </div>
+                            <div class="max-temp-value">
+                                <p>0</p>
+                            </div>
+                        </div>
+                        <div class="min-temp-section">
+                            <div class="min-temp-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-thermometer" viewBox="0 0 16 16">
+                                    <path d="M8 14a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z" />
+                                    <path
+                                        d="M8 0a2.5 2.5 0 0 0-2.5 2.5v7.55a3.5 3.5 0 1 0 5 0V2.5A2.5 2.5 0 0 0 8 0zM6.5 2.5a1.5 1.5 0 1 1 3 0v7.987l.167.15a2.5 2.5 0 1 1-3.333 0l.166-.15V2.5z" />
+                                </svg>
+                            </div>
+                            <div class="min-temp-value">
+                                <p>0</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <script src="./js/index.js"></script>
+</body>
+
+</html>
